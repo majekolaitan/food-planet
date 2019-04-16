@@ -3,16 +3,19 @@
         <nav class="navbar navbar-toggleable-md navbar-light">
             <a class="navbar-brand" href="/">FOOD PLANET</a>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <router-link to="/"><a class="nav-link">Home</a></router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/menu"><a class="nav-link">Menu</a></router-link>
-                </li>
+                    <router-link :to="{ name: 'homeLink' }" tag="li"><a class="nav-link">Home</a></router-link>
+                    <router-link :to="{ name: 'menuLink' }" tag="li"><a class="nav-link">Menu</a></router-link>
             </ul>
         </nav>
     </header>
 </template>
+
+<script>
+export default {
+
+}
+</script>
+
 
 <style>
 header {

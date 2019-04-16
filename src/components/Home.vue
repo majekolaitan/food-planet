@@ -4,11 +4,22 @@
             <div class="background">
                 <h1>Welcome to Food Planet!</h1>
                 <h2>Feeling hungry?</h2>
-                <button class="btn btn-success">Let's Order!</button>
+                <button class="btn btn-success" @click="goToMenu">Let's Order!</button>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    methods: {
+        goToMenu() {
+            this.$router.push({ name: 'menuLink' })
+        }
+    }
+}
+</script>
+
 
 <style>
     #home {

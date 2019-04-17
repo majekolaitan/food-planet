@@ -62,6 +62,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
   export default {
       data() {
           return {
@@ -70,10 +72,9 @@
           }
       },
       computed: {
-        getMenuItems() {
-          // return this.$store.state.menuItems
-          return this.$store.getters.getMenuItems
-        }
+        ...mapGetters ([
+          'getMenuItems'
+        ])
       },
       methods: { 
       addToBasket(item, option) {

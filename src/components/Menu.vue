@@ -50,7 +50,7 @@
             </tr>
           </tbody>
         </table>
-        <p>Order total: </p>
+        <p>Order total: {{ total }}</p>
         <button class="btn btn-success btn-block" @click="addNewOrder">Place Order</button>
         </div>
         <div v-else>
@@ -75,7 +75,15 @@ import { dbOrdersRef } from '../firebaseConfig'
       computed: {
         ...mapGetters ([
           'getMenuItems'
-        ])
+        ]),
+        total() {
+        var totalCost = 0;
+        for( var items in this.basket ) {
+          var individualItem = this.basket[items];
+          totalCost += individualItem.quantity * individualItem.price;
+        }
+        return totalCost
+      }
       },
       methods: { 
       addToBasket(item, option) {
